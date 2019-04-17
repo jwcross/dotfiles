@@ -1,0 +1,30 @@
+set backspace=indent,eol,start
+set clipboard=unnamed " copy to system clipboard
+set hidden
+set ignorecase
+set nocompatible
+set number
+set ruler
+
+" Softtabs with 4 spaces
+set expandtab
+set shiftwidth=4
+set shiftround
+set tabstop=4
+
+filetype plugin indent on
+
+inoremap jk <Esc>
+
+" silent! source ~/.vimrc.bash
+" silent! source ~/.vimrc.cocoa
+" silent! source ~/.vimrc.markdown
+" silent! source ~/.vimrc.plugins
+" silent! source ~/.vimrc.ruby
+" 
+" let termProgram = $TERM_PROGRAM
+" if termProgram == 'Apple_Terminal'
+"     silent! source ~/.vimrc.termapp
+" else
+"     silent! source ~/.vimrc.itermapp
+" endif
