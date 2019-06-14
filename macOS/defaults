@@ -1,0 +1,6 @@
+# Dark menu bar and dock
+defaults write -g NSRequiresAquaSystemAppearance -bool YES
+
+# Dark Xcode with light OS
+defaults write com.apple.dt.Xcode NSRequiresAquaSystemAppearance -bool FALSE
+

@@ -1,11 +1,4 @@
 PATH=$PATH:~/bin
 PATH=$PATH:~/vim
 
-source ~/dotfiles/git/git-completion.bash
-
-# Add git completion to aliases
-__git_complete g __git_main
-__git_complete gc _git_commit
-__git_complete gl _git_log
-__git_complete gco _git_checkout
-__git_complete gbD _git_branch
+source ~/dotfiles/git/bash_profile.git

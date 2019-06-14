@@ -1,3 +1,6 @@
+filetype plugin indent on
+inoremap jk <Esc>
+
 set backspace=indent,eol,start
 set clipboard=unnamed " copy to system clipboard
 set hidden
@@ -12,19 +15,9 @@ set shiftwidth=4
 set shiftround
 set tabstop=4
 
-filetype plugin indent on
+syntax on
+color dracula
 
-inoremap jk <Esc>
-
-" silent! source ~/.vimrc.bash
-" silent! source ~/.vimrc.cocoa
-" silent! source ~/.vimrc.markdown
-" silent! source ~/.vimrc.plugins
-" silent! source ~/.vimrc.ruby
-" 
-" let termProgram = $TERM_PROGRAM
-" if termProgram == 'Apple_Terminal'
-"     silent! source ~/.vimrc.termapp
-" else
-"     silent! source ~/.vimrc.itermapp
-" endif
+" Italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
