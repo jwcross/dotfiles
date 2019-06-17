@@ -4,7 +4,6 @@ inoremap jk <Esc>
 set backspace=indent,eol,start
 set clipboard=unnamed " copy to system clipboard
 set hidden
-set ignorecase
 set nocompatible
 set number
 set ruler
