@@ -20,3 +20,6 @@ color dracula
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+
+" Make `gf` create new file if it doesn't exist
+nnoremap gf :e <cfile><cr>
