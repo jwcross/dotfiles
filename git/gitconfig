@@ -1,0 +1,24 @@
+[alias]
+	checkoutr = checkout
+	co = checkout --no-guess
+	cob = co -b
+	cor = checkoutr
+	df = diff
+	hsow = show
+	l = log --oneline -10
+    s = status
+    sh = show --no-patch
+    sho = "!f() { git show --color $@ | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
+[core]
+	excludesfile = ~/.gitignore_global
+[diff]
+	algorithm = patience
+[include]
+      path = ~/.gitconfig.local
+[push]
+	default = current
+[rebase]
+	autosquash = true
+[user]
+    # These values are set in ~/.gitconfig.local
+

@@ -1,1 +1,7 @@
+" Local ignored directories
 gitignored/*
+
+" Vim files
+*~
+*.swp
+*.swo
