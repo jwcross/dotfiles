@@ -7,5 +7,5 @@ include() {
 
 source ~/dotfiles/bash/bash_profile.bash
 source ~/dotfiles/git/bash_profile.git
-include ~/dotfiles/local/bash_profile.local
 
+include ~/dotfiles/local/bash_profile.local
