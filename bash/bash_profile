@@ -1,0 +1,6 @@
+touch ~/.hushlogin
+export PS1='\W λ '
+
+source ~/.bash_profile.work
+source ~/bin/bash_profile.bin
+source ~/dotfiles/bash_profile.dotfiles
