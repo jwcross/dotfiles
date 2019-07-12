@@ -1,3 +1,8 @@
+if [[ ! $(which fzf) ]]; then
+    echo "brew install fzf ..."
+    brew install fzf
+fi
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
