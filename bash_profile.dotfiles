@@ -1,5 +1,5 @@
-PATH=$PATH:~/bin
-PATH=$PATH:~/vim
+[[ -d ~/bin ]] && PATH=$PATH:~/bin
+[[ -d ~/vim ]] && PATH=$PATH:~/vim
 
 include() {
     [ -f "$1" ] && source "$1"
