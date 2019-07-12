@@ -4,3 +4,7 @@ defaults write -g NSRequiresAquaSystemAppearance -bool YES
 # Dark Xcode with light OS
 defaults write com.apple.dt.Xcode NSRequiresAquaSystemAppearance -bool FALSE
 
+# Screenshots
+defaults write com.apple.screencapture name "Screenshot"
+defaults write com.apple.screencapture location ~/Pictures/Screenshots/
+defaults write com.apple.screencapture "include-date" 0
