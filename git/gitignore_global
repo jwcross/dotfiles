@@ -5,3 +5,4 @@ gitignored/*
 *~
 *.swp
 *.swo
+*netrwhist
