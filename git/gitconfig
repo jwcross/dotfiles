@@ -1,8 +1,6 @@
 [alias]
-    checkoutr = checkout
-    co = checkout --no-guess
+    co = checkout
     cob = co -b
-    cor = checkoutr
     df = diff
     hsow = show
     l = log --oneline -10
