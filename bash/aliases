@@ -32,6 +32,7 @@ alias gbl="g blame"
 alias gc="g commit -m"
 alias gcf="g commit --fixup"
 alias gcfr='f() { gcf $1; gri $1~1; }; f'
+alias gcod="gco develop"
 alias gfr="gcfr"
 alias gcl="g clone"
 alias gco="g checkout"
