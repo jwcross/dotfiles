@@ -16,7 +16,7 @@ set shiftround
 set tabstop=4
 
 syntax on
-color dracula
+" color dracula " Dracula isn't installed on this computer
 
 " Italics
 let &t_ZH="\e[3m"
