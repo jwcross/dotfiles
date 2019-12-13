@@ -5,7 +5,7 @@
     hsow = show
     l = log --oneline -10
     s = status
-    sh = show --no-patch
+    sh = show --name-only
     sho = "!f() { git show --color $@ | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
 [core]
     excludesfile = ~/.gitignore_global
