@@ -4,6 +4,7 @@ inoremap jk <Esc>
 set backspace=indent,eol,start
 set clipboard=unnamed " copy to system clipboard
 set hidden
+set ignorecase
 set nocompatible
 set number
 set ruler
@@ -23,3 +24,7 @@ let &t_ZR="\e[23m"
 
 " Make `gf` create new file if it doesn't exist
 nnoremap gf :e <cfile><cr>
+
+" FZF integration
+set rtp+=/usr/local/opt/fzf
+nnoremap <leader>t :FZF<cr>
