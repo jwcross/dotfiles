@@ -13,10 +13,11 @@
     algorithm = patience
 [include]
     path = ~/.gitconfig.local
+[pull]
+	rebase = true
 [push]
     default = current
 [rebase]
     autosquash = true
 [user]
     # These values are set in ~/.gitconfig.local
-
