@@ -129,6 +129,7 @@ alias rc="rcup"
 alias rcup='source ~/.bash_profile'
 alias safariSessionUrl='f() { file=$1; pbpaste >> $file; echo '' >> $file; }; f'
 alias Snippets="cd ~/Snippets"
+alias stackoverflow="lynx-stackoverflow"
 alias sl="ls"
 alias slint="swiftlint"
 alias snippets="Snippets"
