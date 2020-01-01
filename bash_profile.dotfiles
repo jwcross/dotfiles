@@ -9,3 +9,5 @@ source ~/dotfiles/bash/bash_profile.bash
 source ~/dotfiles/git/bash_profile.git
 
 include ~/dotfiles/local/bash_profile.local
+
+export FZF_DEFAULT_COMMAND='rg --files'
