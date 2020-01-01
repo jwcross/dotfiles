@@ -101,6 +101,7 @@ alias gshow="g sho"
 alias hosts="sudo vim /etc/hosts"
 alias killded="rm -rf ~/Library/Developer/Xcode/DerivedData"
 alias l="ls"
+alias lg="gl"
 alias lns="ln -s"
 alias macOS-setup="vim ~/dotfiles/macOS/manual-setup"
 alias messa="messages"
@@ -125,28 +126,23 @@ alias snippets="Snippets"
 alias src="cd ~/src"
 alias sumNumbers="awk '{s+=$1} END {print s}' "
 alias svg-to-png="rsvg-convert"
+alias tconf="tmux.conf"
+alias tmuxconf="tmux.conf"
+alias tmux.conf="vim ~/.tmux.conf"
 alias todo="echo  >> ~/TODO"
 alias v="vim"
 alias vc="vim-git-conflicts"
 alias vd="fzf-vim"
 alias vimrc="vim ~/.vimrc"
-alias vshl="vim-bash-script"
+alias vsh="vim-bash-script"
+alias vshl="vsh"
 alias vmi="vim"
-<<<<<<< HEAD
-=======
 ##########
 # Personal
 ##########
 alias iOS_jcrossley="cat ~/Snippets/iOS_jcrossley"
 alias jazz="vim ~/Music/100-albums-jazz.md"
 alias jcrossley_iOS="iOS_jcrossley"
-alias reviews="cd ~/Desktop/Reviews"
 ##########
 # Unsorted
 ##########
-alias lg="gl"
-alias tmuxconf="tmux.conf"
-alias tmux.conf="vim ~/.tmux.conf"
-alias tconf="tmux.conf"
-alias vsh="vim-bash-script"
->>>>>>> [bash] Update aliases
