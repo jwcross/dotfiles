@@ -22,9 +22,32 @@ syntax on
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-" Make `gf` create new file if it doesn't exist
+" Swap files
+set shortmess+=A " Just open it, don't warn about an existing one
+
+" Make `gf` create new file when it doesn't exist
 nnoremap gf :e <cfile><cr>
 
 " FZF integration
 set rtp+=/usr/local/opt/fzf
+
+" Functions
+" Fuzzy find and edit file
 nnoremap <leader>t :FZF<cr>
+
+" UGH
+
+silent! source ~/dotfiles/vim/vimrc.bash
+silent! source ~/dotfiles/vim/vimrc.cocoa
+silent! source ~/dotfiles/vim/vimrc.markdown
+silent! source ~/dotfiles/vim/vimrc.local
+silent! source ~/dotfiles/vim/vimrc.plugins
+silent! source ~/dotfiles/vim/vimrc.ruby
+set nocompatible
+
+let termProgram = $TERM_PROGRAM
+if termProgram == 'Apple_Terminal'
+    silent! source ~/.vimrc.termapp
+else
+    silent! source ~/.vimrc.itermapp
+endif
