@@ -5,9 +5,20 @@ include() {
     [ -f "$1" ] && source "$1"
 }
 
-source ~/dotfiles/bash/bash_profile.bash
-source ~/dotfiles/git/bash_profile.git
+source_subdirectory() {
+    source ~/dotfiles/$1/bash_profile
+}
+
+# source ~/dotfiles/bash/bash_profile.bash
+# source ~/dotfiles/git/bash_profile.git
+# source ~/dotfiles/xcode/bash_profile.xcode
+# source ~/dotfiles/ruby/bash_profile.ruby
+# source ~/dotfiles/python/bash_profile.python
+
+source_subdirectory bash
+source_subdirectory git
+source_subdirectory xcode
+source_subdirectory ruby
+source_subdirectory python
 
 include ~/dotfiles/local/bash_profile.local
-
-export FZF_DEFAULT_COMMAND='rg --files'
