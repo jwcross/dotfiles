@@ -1,0 +1,18 @@
+# App dependencies
+
+casks=~/dotfiles/setup/brew-casks
+
+installed() {
+    [[ -f $casks ]] && grep $1 $casks # Memoized check
+}
+
+install-if-needed() {
+    pkg=$1
+    if [[ -z $(installed $pkg) ]]; then
+        brew install --cask $pkg
+        brew ls --cask --versions > $casks # Memoize
+    fi
+}
+
+# App dependencies
+install-if-needed karabiner-elements

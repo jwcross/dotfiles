@@ -1,2 +1,7 @@
 eval "$(pyenv init -)"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
+source /usr/local/bin/virtualenvwrapper.sh
+
+eval "$(register-python-argcomplete pipx)"

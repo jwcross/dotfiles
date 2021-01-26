@@ -33,13 +33,19 @@ source_subdirectory() {
     source ~/dotfiles/$1/bash_profile
 }
 
+source_subdirectory setup
+
 source_subdirectory bash
 source_subdirectory git
-source_subdirectory xcode
+#source_subdirectory python # python configuration greatly slows down new windows. Enable this when needed.
 source_subdirectory ruby
-source_subdirectory python
+source_subdirectory vscode
+source_subdirectory xcode
 
 include ~/dotfiles/local/bash_profile.local
 
 include ~/bin/bash_profile.bin
 include ~/.bash_profile.work
+
+export PATH="$HOME/.elan/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
