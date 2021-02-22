@@ -1,4 +1,5 @@
-if [[ ! $(which fzf) ]]; then
+if [[ $(which fzf) == "fzf not found" ]]; then
+    exit
     echo "brew install fzf ..."
     brew install fzf
 fi

@@ -29,7 +29,7 @@ set shortmess+=A " Just open it, don't warn about an existing one
 nnoremap gf :e <cfile><cr>
 
 " FZF integration
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/fzf
 
 " Functions
 " Fuzzy find and edit file

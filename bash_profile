@@ -1,7 +1,7 @@
 touch ~/.hushlogin
 #export PS1='\W $ '
 #export PS1='\W λ '
-export PS1='\W λx '
+#export PS1='\W λx '
 #export PS1='λx \W '
 #export PS1='\W ℂ '
 #export PS1='\W ∀x ∈ ℂ: '

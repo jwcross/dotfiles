@@ -20,4 +20,6 @@
 [rebase]
     autosquash = true
 [user]
+	name = Jon Crossley
+	email = jonathan.crossley@me.com
     # These values are set in ~/.gitconfig.local

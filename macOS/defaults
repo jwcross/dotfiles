@@ -1,10 +1,46 @@
-# Dark menu bar and dock
-defaults write -g NSRequiresAquaSystemAppearance -bool YES
+on()    { defaults write "$DOMAIN" "$1" -bool YES; }
+off()   { defaults write "$DOMAIN" "$1" -bool FALSE; }
+write() { defaults write "$DOMAIN" "$1" "$2"; }
 
-# Dark Xcode with light OS
-defaults write com.apple.dt.Xcode NSRequiresAquaSystemAppearance -bool FALSE
+theming() {
+    DOMAIN="-g"
 
-# Screenshots
-defaults write com.apple.screencapture name "Screenshot"
-defaults write com.apple.screencapture location ~/Pictures/Screenshots/
-defaults write com.apple.screencapture "include-date" 0
+    on NSRequiresAquaSystemAppearance # Dark mode
+}
+
+# https://github.com/ctreffs/xcode-defaults
+xcode() {
+    DOMAIN=com.apple.dt.Xcode
+
+    # Show build times
+    on ShowBuildOperationDuration
+
+    # Trim trailing whitespace
+    on DVTTextEditorTrimTrailingWhitespace
+    on DVTTextEditorTrimWhitespaceOnlyLines
+
+    # Dark mode with light OS
+    off NSRequiresAquaSystemAppearance 
+}
+
+screenshots() {
+    DOMAIN=com.apple.screencapture
+
+    # Output directory and symlink from Desktop
+    dir=~/Pictures/Screenshots
+    symlink=~/Desktop/Screenshots
+    mkdir -p "$dir"
+    [[ -L "$symlink" ]] || ln -sF "$dir" "$symlink"
+    write location "$dir"
+
+    # Format: "Screenshot 1234"
+    write name "Screenshot"
+    write "include-date" 0
+
+    # Take effect
+    killall SystemUIServer
+}
+
+theming
+xcode
+screenshots

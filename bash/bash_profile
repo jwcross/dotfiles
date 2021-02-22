@@ -1,2 +1,3 @@
-source ~/dotfiles/bash/aliases
-source ~/dotfiles/bash/fzf.bash
+source ~/.aliases
+source ~/.aliases.local
+#source ~/dotfiles/bash/fzf.bash
