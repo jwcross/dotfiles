@@ -52,21 +52,36 @@ symlink vim/autoload
 # Homebrew
 ##########
 
-if [[ ! `which brew` ]]; then
-    echo "installing homebrew"
-    /bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`"
-fi
+installOrUpdateHomebrew() {
+    if [[ `which brew` ]]; then
+        brew update # TODO: Suppress "Already up to date"
+    else
+        echo "installing homebrew"
+        /bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`"
+    fi
+}
+
+installOrUpgrade() {
+    pkg="$1"
+    if brew ls --versions "$pkg" >/dev/null; then
+        HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$pkg"
+    else
+        HOMEBREW_NO_AUTO_UPDATE=1 brew install "$pkg"
+    fi
+}
 
 PACKAGES=(
-    # iOS
-    carthage
-    swiftlint
-    # Other
     blackhole-2ch
+    carthage
     coreutils
     ffmpeg
     imagemagick
+    swiftlint
     tmux
 )
 
-brew install ${PACKAGES[@]}
+installOrUpdateHomebrew
+
+for pkg in ${PACKAGES[@]}; do
+    installOrUpgrade $pkg
+done
