@@ -4,6 +4,7 @@
 #############
 
 OSS=~/Code/OSS
+DOTFILES=~/dotfiles
 
 # Helper functions
 ##################
@@ -52,36 +53,29 @@ symlink vim/autoload
 # Homebrew
 ##########
 
-installOrUpdateHomebrew() {
-    if [[ `which brew` ]]; then
-        brew update # TODO: Suppress "Already up to date"
-    else
-        echo "installing homebrew"
+installHomebrew() {
+    if ! [[ `which brew` ]]; then
+        echo "Installing homebrew..."
         /bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`"
     fi
 }
 
-installOrUpgrade() {
-    pkg="$1"
-    if brew ls --versions "$pkg" >/dev/null; then
-        HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$pkg"
-    else
-        HOMEBREW_NO_AUTO_UPDATE=1 brew install "$pkg"
-    fi
+installBrews() {
+    echo "Updating brews..."
+
+    for pkg in `cat $DOTFILES/BREWS`; do
+        [[ `brew ls --versions $pkg` ]] || HOMEBREW_NO_AUTO_UPDATE=1 brew install "$pkg"
+    done
 }
 
-PACKAGES=(
-    blackhole-2ch
-    carthage
-    coreutils
-    ffmpeg
-    imagemagick
-    swiftlint
-    tmux
-)
+installCasks() {
+    echo "Updating casks..."
 
-installOrUpdateHomebrew
+    for pkg in `cat $DOTFILES/CASKS`; do
+        [[ `brew ls --cask --versions $pkg` ]] || HOMEBREW_NO_AUTO_UPDATE=1 brew install --cask "$pkg"
+    done
+}
 
-for pkg in ${PACKAGES[@]}; do
-    installOrUpgrade $pkg
-done
+installHomebrew
+installBrews
+installCasks

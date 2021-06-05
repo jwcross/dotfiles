@@ -49,3 +49,6 @@ include ~/.bash_profile.work
 
 export PATH="$HOME/.elan/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
+
+# Disable terminal windows from including username, window size, etc
+DISABLE_AUTO_TITLE="true"

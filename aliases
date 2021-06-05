@@ -12,7 +12,9 @@ alias bin="cd ~/bin"
 alias binwork="cd ~/bin.work"
 alias bprof="bash_profile"
 alias brc="bashrc"
+alias brews="vim ~/dotfiles/BREWS"
 alias browse="hub browse"
+alias casks="vim ~/dotfiles/CASKS"
 alias catcopy='f() { cat $1 | pbcopy; }; f'
 alias cdf=". ~/bin/fzf/fzf-cd"
 alias chmx="chmod +x"
@@ -129,7 +131,8 @@ alias OSS="cd ~/Code/OSS"
 alias oss="OSS"
 alias pr="github-open-pr"
 alias rc="rcup"
-alias rcup='source ~/.zshrc'
+alias rcup="source ~/.zshrc"
+alias trcup="f() { source ~/.zshrc; tmux source-file ~/.tmux.conf; }; f"
 alias safariSessionUrl='f() { file=$1; pbpaste >> $file; echo '' >> $file; }; f'
 alias Snippets="cd ~/Snippets"
 alias stackoverflow="lynx-stackoverflow"
@@ -160,3 +163,4 @@ alias jcrossley_iOS="iOS_jcrossley"
 ##########
 # Unsorted
 ##########
+alias zshrc="vim ~/.zshrc"

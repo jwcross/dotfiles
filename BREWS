@@ -1,0 +1,12 @@
+carthage
+coreutils
+ffmpeg
+htop
+imagemagick
+jq
+lean
+mupdf
+swiftlint
+taskwarrior-tui
+tmux
+youtube-dl
