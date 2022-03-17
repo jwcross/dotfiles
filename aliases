@@ -124,7 +124,7 @@ alias messagesOnLogin="messagesToDisplayOnLogin"
 alias messagesToDisplayOnLogin="vim ~/.messagesToDisplayOnLogin"
 alias m="make"
 alias mka='mkalias'
-alias mkalias='f() { echo "alias $1=\"$2\"" >> ~/.aliases.local; }; f'
+alias mkalias='f() { echo "alias $1=\"$2\"" >> ~/.aliases.local; rcup; }; f'
 alias mkd="mkdir"
 alias odir="open ."
 alias OSS="cd ~/Code/OSS"
@@ -132,7 +132,6 @@ alias oss="OSS"
 alias pr="github-open-pr"
 alias rc="rcup"
 alias rcup="source ~/.zshrc"
-alias trcup="f() { source ~/.zshrc; tmux source-file ~/.tmux.conf; }; f"
 alias safariSessionUrl='f() { file=$1; pbpaste >> $file; echo '' >> $file; }; f'
 alias Snippets="cd ~/Snippets"
 alias stackoverflow="lynx-stackoverflow"
@@ -146,13 +145,14 @@ alias tconf="tmux.conf"
 alias tmuxconf="tmux.conf"
 alias tmux.conf="vim ~/.tmux.conf"
 alias todo="echo  >> ~/TODO"
+alias trcup="f() { source ~/.zshrc; tmux source-file ~/.tmux.conf; }; f"
 alias v="vim"
 alias vc="vim-git-conflicts"
 alias vd="fzf-vim"
 alias vim='vim -n'
 alias vimrc="vim ~/.vimrc"
-alias vsh="vim-bash-script"
-alias vshl="vsh"
+alias vsh="vshl"
+alias vshl='f() { [[ `cat $1` ]] && vim $1 || (echo "#!/usr/bin/env bash" > $1; vim $1; chmod u+x $1;) }; f'
 alias vmi="vim"
 ##########
 # Personal

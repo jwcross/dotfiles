@@ -52,3 +52,8 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Disable terminal windows from including username, window size, etc
 DISABLE_AUTO_TITLE="true"
+
+######
+# Unsorted
+######
+setopt auto_cd
