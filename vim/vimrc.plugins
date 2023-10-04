@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-" Cocoa
-Plug 'msanders/cocoa.vim'
 Plug 'keith/swift.vim'
-
-" Typescript
 Plug 'leafgarland/typescript-vim'
+Plug 'msanders/cocoa.vim'
+Plug 'tpope/vim-obsession'
 
 call plug#end()

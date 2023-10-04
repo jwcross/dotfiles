@@ -1,0 +1,2 @@
+" Plist support
+autocmd FileType plist setlocal autoindent noexpandtab tabstop=4 shiftwidth=4

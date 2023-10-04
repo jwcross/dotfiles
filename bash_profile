@@ -1,59 +1,45 @@
+# Suppress annoying messages at start of sessions
+#################################################
+# "Last login"
 touch ~/.hushlogin
-#export PS1='\W $ '
-#export PS1='\W λ '
-#export PS1='\W λx '
-#export PS1='λx \W '
-#export PS1='\W ℂ '
-#export PS1='\W ∀x ∈ ℂ: '
-#export PS1='\W ℍ '
-#export PS1='\W ℕ '
-#export PS1='\W ℙ '
-#export PS1='\W n ∈ ℙ: '
-#export PS1='\W ℚ '
-#export PS1='\W ℝ '
-#export PS1='\W ℤ '
-#export PS1='\W χ '
-#export PS1='\W σ(n) '
-#export PS1='\W ∀ '
+# TODO: "Restored session"
+# Disable terminal windows from including username, window size, etc
+DISABLE_AUTO_TITLE="true"
 
+# Customize PROMPT
+##################
+# 'CurrentDir λ '
+export PROMPT='%1d λ '
+# Full set of prompt expansions:
+#   https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
+# Other spark-joy characters:
+#   λ ℂ ∀x ∈ ℂ: ℍ ℕ ℙ n ∈ ℙ: ℚ ℝ ℤ χ σ(n) ∀
+
+# Colors, styling
+#################
 export CLICOLOR=1
 
-include() {
-    [[ -f "$1" ]] && source "$1"
-}
+# More
+######
 
 [[ -d ~/bin ]] && PATH=$PATH:~/bin
 [[ -d ~/vim ]] && PATH=$PATH:~/vim
+setopt auto_cd
 
-include() {
-    [ -f "$1" ] && source "$1"
-}
+source ~/dotfiles/bash/bash_profile
+source ~/dotfiles/git/bash_profile
+source ~/dotfiles/ruby/bash_profile
+source ~/dotfiles/setup/bash_profile
+source ~/dotfiles/vscode/bash_profile
+source ~/dotfiles/xcode/bash_profile
 
-source_subdirectory() {
-    source ~/dotfiles/$1/bash_profile
-}
-
-source_subdirectory setup
-
-source_subdirectory bash
-source_subdirectory git
-#source_subdirectory python # python configuration greatly slows down new windows. Enable this when needed.
-source_subdirectory ruby
-source_subdirectory vscode
-source_subdirectory xcode
-
-include ~/dotfiles/local/bash_profile.local
-
-include ~/bin/bash_profile.bin
-include ~/.bash_profile.work
+source ~/dotfiles/local/bash_profile.local
+source ~/bin/bash_profile.bin
+source ~/.bash_profile.work
+source ~/.functions
 
 export PATH="$HOME/.elan/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
-# Disable terminal windows from including username, window size, etc
-DISABLE_AUTO_TITLE="true"
-
-######
-# Unsorted
-######
-setopt auto_cd
+# Preserve emacs keybindings in tmux (e.g. ^A start of line)
+bindkey -e

@@ -8,7 +8,7 @@
     sh = show --name-only
     sho = "!f() { git show --color $@ | sed -E \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore
 [diff]
     algorithm = patience
 [include]
@@ -23,3 +23,6 @@
 	name = Jon Crossley
 	email = jonathan.crossley@me.com
     # These values are set in ~/.gitconfig.local
+[url "git@github.com:"]
+	insteadOf = git://
+	insteadOf = https://github.com/

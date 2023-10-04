@@ -15,39 +15,38 @@ set shiftwidth=4
 set shiftround
 set tabstop=4
 
-syntax on
-"color dracula
-
-" Italics
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
 " Swap files
 set shortmess+=A " Just open it, don't warn about an existing one
 
 " Make `gf` create new file when it doesn't exist
 nnoremap gf :e <cfile><cr>
 
-" FZF integration
-set rtp+=/opt/homebrew/fzf
+" Colors and visual styling
+"""""""""""""""""""""""""""
+syntax on
+"color dracula
+" Italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
-" Functions
-" Fuzzy find and edit file
+" Leader hotkeys
+""""""""""""""""
 nnoremap <leader>t :FZF<cr>
+nnoremap <leader>v :e ~/.vimrc<cr>
+nnoremap <leader>r :!%:p<cr>
 
-" UGH
+" Plugins
+"""""""""
+set rtp+=/opt/homebrew/fzf
+silent! source ~/dotfiles/vim/vimrc.plugins
 
-silent! source ~/dotfiles/vim/vimrc.bash
+" Further configuration
+"""""""""""""""""""""""
+" what does silent! do here?
 silent! source ~/dotfiles/vim/vimrc.cocoa
 silent! source ~/dotfiles/vim/vimrc.markdown
 silent! source ~/dotfiles/vim/vimrc.local
-silent! source ~/dotfiles/vim/vimrc.plugins
 silent! source ~/dotfiles/vim/vimrc.ruby
-set nocompatible
 
-let termProgram = $TERM_PROGRAM
-if termProgram == 'Apple_Terminal'
-    silent! source ~/.vimrc.termapp
-else
-    silent! source ~/.vimrc.itermapp
-endif
+" does this need to be at end?
+set nocompatible

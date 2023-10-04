@@ -1,8 +1,18 @@
-" Local ignored directories
+# macOS
+.DS_Store
+
+# Local
+#######
 gitignored/*
 
-" Vim files
+# Vim
+#####
 *~
 *.swp
 *.swo
 *netrwhist
+
+# Xcode
+#######
+xcuserdata/
+*xcuserstate

@@ -49,6 +49,7 @@ symlink gitconfig
 symlink tmux.conf
 symlink vimrc
 symlink vim/autoload
+ln -s $DOTFILES/git/gitignore_global ~/.gitignore
 
 # Homebrew
 ##########
